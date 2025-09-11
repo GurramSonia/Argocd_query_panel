@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: query-panel-config
+data:
+  APP_NAME: "Query Panel"
+  LOG_LEVEL: "info"

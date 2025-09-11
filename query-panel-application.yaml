@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: query-panel
+  namespace: argocd
+spec:
+  destination:
+    namespace: query-panel
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/GurramSonia/Argocd_query_panel.git
+    targetRevision: HEAD
+    path: query-panel
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
