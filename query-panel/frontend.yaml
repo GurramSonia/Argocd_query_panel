@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  frontend-deployment
+  name:  frontend-deployment2
   namesapce: query-panel-argo
   
   annotations:
@@ -10,11 +10,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: query-panel-frontend
+      app: query-panel-frontend2
   template:
     metadata:
       labels:
-        app: query-panel-frontend
+        app: query-panel-frontend2
     spec:
       # tolerations:
       #   - key: "node-role"
@@ -22,7 +22,7 @@ spec:
       #     value: "worker"
       #     effect: "NoSchedule"
       containers:
-      - name: query-panel-frontend
+      - name: query-panel-frontend2
         #image: 683819934378.dkr.ecr.us-east-1.amazonaws.com/query-panel:imag-ui
         image: soniagurramavari/query-panel-frontend-main:v1 # ECR Image
         ports:
@@ -49,15 +49,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: frontend-service
+  name: frontend-service2
   namesapce: query-panel-argo
   
 spec:
   selector:
-    app: query-panel-frontend
+    app: query-panel-frontend2
   ports:
     - protocol: TCP
-      port: 3000
+      port: 3002
       targetPort: 3000
   #type: NodePort
   #type: ClusterIP
