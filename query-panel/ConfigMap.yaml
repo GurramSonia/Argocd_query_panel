@@ -6,3 +6,4 @@ metadata:
 data:
   APP_NAME: "Query Panel"
   LOG_LEVEL: "info"
+# small change to test the self-heal functionality of argocd. This change will be reverted in the next commit.
